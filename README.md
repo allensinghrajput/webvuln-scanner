@@ -41,55 +41,7 @@ The project was built to demonstrate practical web application security concepts
 
 # Architecture
 
-```
-Browser
-
-        │
-
-        ▼
-
- index.php
-
-        │
-
-        ▼
-
- API Controller
-
-        │
-
-        ▼
-
- Scanner Engine
-
-        │
-
- ├── Headers
-
- ├── Cookies
-
- ├── SSL
-
- ├── Exposure
-
- ├── Fingerprinting
-
- ├── XSS
-
- └── SQLi
-
-        │
-
-        ▼
-
- MySQL Database
-
-        │
-
-        ▼
-
- Results Dashboard
-```
+<img src="webvuln-scanner architecture.png">
 
 ---
 
