@@ -57,35 +57,23 @@ The project was built to demonstrate practical web application security concepts
 
 # Project Structure
 
-```
-webvuln-scanner/
-
-api/
-includes/
-assets/
-sql/
-
-config.php
-index.php
-history.php
-scan_detail.php
-README.md
-```
+<img src="assets/structure.png">
 
 ---
 
-# Screens
 
-Replace these placeholders with screenshots.
+# Home Dashboard
+<img src="assets/homepage.png.png">
 
-```
-Home Dashboard
+# Scan Report
+<img src="assets/scan-report.png">
 
-Scan Report
+# History Page
+<img src="assets/scan-history.png">
 
-History Page
+# Detailed Findings
+<img src="assets/detailed-findings.png">
 
-Detailed Findings
 ```
 
 ---
