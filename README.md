@@ -75,7 +75,7 @@ The project was built to demonstrate practical web application security concepts
 <img src="assets/detailed-findings.png">
 
 ```
-
+```
 ---
 
 # Design Goals
