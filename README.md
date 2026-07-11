@@ -41,7 +41,7 @@ The project was built to demonstrate practical web application security concepts
 
 # Architecture
 
-<img src="webvuln-scanner architecture.png">
+<img src="assets/webvuln-scanner architecture.png">
 
 ---
 
