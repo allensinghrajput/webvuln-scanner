@@ -1,161 +1,179 @@
-# 🔍 WebVuln Scanner
+<div align="center">
 
-A browser-based web vulnerability scanner that performs **passive, non-destructive security assessments** on websites. It helps identify common security misconfigurations and potential vulnerabilities through safe, read-only analysis without exploiting or modifying the target system.
+# WebVuln Scanner
 
-> ⚠️ **Disclaimer:** This project is intended **only** for websites you own or have explicit authorization to test. Unauthorized scanning may violate laws or terms of service.
-
----
-
-## 📖 Overview
-
-WebVuln Scanner analyzes a target website and generates a security report highlighting common vulnerabilities, configuration issues, and information disclosure risks. The scanner focuses on passive detection techniques, making it suitable for security assessments, educational purposes, and authorized penetration testing.
+A passive web security scanner built with PHP and MySQL that identifies common website security weaknesses through safe, read-only analysis.
 
 ---
 
-## ✨ Features
+<img src="https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white">
+<img src="https://img.shields.io/badge/Apache-2.4-D22128?style=for-the-badge&logo=apache&logoColor=white">
+<img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
 
-- 🛡️ Security Header Analysis
-- 🍪 Cookie Security Checks
-- 🔐 SSL/TLS Certificate Validation
-- 🖥️ Server & CMS Fingerprinting
-- 📂 Detection of Exposed Sensitive Files
-- 📁 Directory Listing Detection
-- 🤖 robots.txt Analysis
-- ⚠️ Basic Reflected XSS Detection
-- 💉 Error-Based SQL Injection Detection
-- 📊 Risk Score Calculation
-- 🗂️ Scan History Management
-- 🌐 Browser-Based Dashboard
+</div>
 
 ---
 
-## 🔍 Security Checks
+# About
 
-The scanner analyzes websites for:
+WebVuln Scanner is a lightweight web application designed to inspect websites for common security weaknesses without attempting exploitation. Instead of attacking the target, it analyzes publicly available responses and configuration details to help identify potential security risks.
 
-- Missing HTTP Security Headers
-- Weak Cookie Configurations
-- SSL/TLS Certificate Issues
-- Server & Technology Disclosure
-- CMS Fingerprinting
-- Publicly Accessible Sensitive Files
-- Directory Listing Exposure
-- Sensitive Paths in robots.txt
-- Reflected XSS Indicators
-- Error-Based SQL Injection Indicators
+The project was built to demonstrate practical web application security concepts while maintaining a safe, passive scanning approach.
 
 ---
 
-## 🖥️ Technology Stack
+# What It Detects
 
-### Backend
-- PHP 8
-- Apache
-- MySQL / MariaDB
-
-### Frontend
-- HTML5
-- CSS3
-- JavaScript
-
-### Libraries
-- cURL
-- OpenSSL
-- PDO
+| Component | Checks Performed |
+|------------|-----------------|
+| HTTP Headers | Missing HSTS, CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy |
+| Cookies | Secure, HttpOnly and SameSite validation |
+| SSL/TLS | Expired certificates, hostname mismatch, self-signed certificates |
+| Fingerprinting | Server software, framework and CMS identification |
+| Public Exposure | .env, .git, backup files, phpinfo pages |
+| Directories | Open directory listings |
+| robots.txt | Sensitive path discovery |
+| XSS | Reflected input detection |
+| SQL Injection | Error-based SQL exception detection |
 
 ---
 
-## 📂 Project Structure
+# Architecture
+
+```
+Browser
+
+        │
+
+        ▼
+
+ index.php
+
+        │
+
+        ▼
+
+ API Controller
+
+        │
+
+        ▼
+
+ Scanner Engine
+
+        │
+
+ ├── Headers
+
+ ├── Cookies
+
+ ├── SSL
+
+ ├── Exposure
+
+ ├── Fingerprinting
+
+ ├── XSS
+
+ └── SQLi
+
+        │
+
+        ▼
+
+ MySQL Database
+
+        │
+
+        ▼
+
+ Results Dashboard
+```
+
+---
+
+# Built With
+
+| Backend | Frontend | Database |
+|----------|-----------|----------|
+| PHP | HTML | MySQL |
+| Apache | CSS | MariaDB |
+| cURL | JavaScript | PDO |
+
+---
+
+# Project Structure
 
 ```
 webvuln-scanner/
-│
-├── api/
-├── assets/
-├── includes/
-├── sql/
-├── index.php
-├── history.php
-├── scan_detail.php
-├── config.php
-└── README.md
+
+api/
+includes/
+assets/
+sql/
+
+config.php
+index.php
+history.php
+scan_detail.php
+README.md
 ```
 
 ---
 
-## 🚀 How It Works
+# Screens
 
-1. User enters a target URL.
-2. The scanner validates the target.
-3. Passive security checks are performed.
-4. Findings are analyzed and assigned severity levels.
-5. An overall risk score is calculated.
-6. Results are stored in the database.
-7. The dashboard displays the complete security report.
+Replace these placeholders with screenshots.
 
----
+```
+Home Dashboard
 
-## 📊 Risk Levels
+Scan Report
 
-| Severity | Description |
-|-----------|-------------|
-| 🟢 Info | Informational finding |
-| 🟡 Low | Minor security issue |
-| 🟠 Medium | Moderate security risk |
-| 🔴 High | Significant security issue |
-| ⚫ Critical | Immediate attention required |
+History Page
+
+Detailed Findings
+```
 
 ---
 
-## ⚡ Key Characteristics
+# Design Goals
 
-- Passive scanning only
-- No exploitation
-- No data extraction
-- No authentication bypass
-- No denial-of-service testing
-- Safe for authorized security assessments
+• Passive Scanning
 
----
+• Non-destructive Testing
 
-## 📸 Screenshots
+• Simple Deployment
 
-> Add screenshots of:
+• Browser Interface
 
-- Home Dashboard
-- Scan Results
-- Scan History
-- Detailed Findings
+• Risk Scoring
+
+• Persistent Scan History
 
 ---
 
-## 🛠️ Installation
+# Future Roadmap
 
-See the setup guide included in this repository for deployment using XAMPP, Apache, PHP, and MySQL.
-
----
-
-## 🎯 Future Improvements
-
-- Authentication System
-- PDF Report Export
-- Scheduled Scanning
+- Authentication
+- PDF Reports
+- Docker Deployment
 - REST API
-- CVSS Risk Scoring
-- Multi-threaded Scanning
-- OWASP Top 10 Mapping
-- Docker Support
+- Scheduled Scanning
+- OWASP Mapping
+- CVSS Integration
 
 ---
 
-## 📜 License
+# Notice
 
-This project is intended for educational purposes and authorized security testing only.
+This project should only be used against systems you own or have explicit permission to assess. It performs passive security checks and is intended for educational purposes and authorized security assessments.
 
 ---
 
-## 👨‍💻 Author
+<div align="center">
 
-**Abhinav Kumar**
+Made by **Abhinav Kumar**
 
-BCA (Cybersecurity)
+</div>
